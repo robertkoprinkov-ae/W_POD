@@ -1,0 +1,14 @@
+[build-system]
+requires = ['hatchling >= 1.26']
+build-backend = 'hatchling.build'
+
+[project]
+name = 'W_POD'
+version = '0.0.1'
+authors = [
+    { name='Robert Koprinkov', email="robert.koprinkov@onera.fr"}
+]
+description = "W_POD"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/W_POD"]
