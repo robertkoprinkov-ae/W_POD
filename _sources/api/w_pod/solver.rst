@@ -41,7 +41,7 @@ Drive SciPy over one or several stages.
       and prints the per-mode regularisation every 50 iterations.
 
       .. warning:: With SLSQP the callback sees the trial point
-         (:doc:`../../caveats`).
+         (:doc:`../../numerics`).
 
    .. py:attribute:: result
 

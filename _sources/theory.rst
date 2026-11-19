@@ -19,4 +19,3 @@ The method, how to run the code, and the numerical details behind it.
 
    numerics
    constants
-   caveats

@@ -167,7 +167,7 @@ AnsatzConfig
    .. note::
 
       The cost methods are jitted with ``self`` static. Do not change the
-      attributes of a config after its first evaluation (:doc:`../../caveats`).
+      attributes of a config after its first evaluation.
 
    .. py:attribute:: l2_standard
 
@@ -228,7 +228,7 @@ AnsatzConfig
    .. py:method:: calc_exceed_training(params_arr)
 
       Sum over the snapshots of :meth:`calc_exceed` **squared**, so the
-      overshoot enters to the fourth power (:doc:`../../caveats`).
+      overshoot enters to the fourth power.
 
    .. py:method:: calc_pod_norms_reg(params_arr)
 

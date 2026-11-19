@@ -219,5 +219,4 @@ Floating point
 
 The crossing-waves Exp 1 drivers run in fp32 (x64 is not enabled), so their
 implicit differentiation uses the LU solver. All other drivers enable x64 and
-use ``GuardedNormalCG``. Runs are not bit-reproducible, on GPU or on CPU:
-rerunning the same job can give a slightly different trajectory.
+use ``GuardedNormalCG``.

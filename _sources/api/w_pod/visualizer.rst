@@ -36,8 +36,8 @@ and closes the figure.
       Top row: mode vectors. Bottom row: every trajectory on
       :math:`z` ± 10 % of the data range, without the amplitude floor.
 
-      Requires :meth:`~W_POD.solver.IteratedSolver.calc_gradients_per_param`
-      (:doc:`../../caveats`).
+      Requires an :class:`~W_POD.solver.IteratedSolver`, because it calls
+      :meth:`~W_POD.solver.IteratedSolver.calc_gradients_per_param`.
 
    .. py:method:: plot_hist(filename='img/hist.png')
 

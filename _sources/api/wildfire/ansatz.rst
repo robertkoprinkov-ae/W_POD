@@ -238,7 +238,7 @@ Modes
    .. py:method:: get_reg(params)
 
       RKHS norm of the amplitude trajectory. Fails if the amplitude is
-      fixed (:doc:`../../caveats`).
+      fixed.
 
    .. py:method:: plot_coeff(vis, params, ax)
 

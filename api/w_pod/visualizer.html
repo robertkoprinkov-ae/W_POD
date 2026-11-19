@@ -386,14 +386,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../constants.html#w-pod-two-dim-2d">W_POD.two_dim (2D)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../caveats.html">Known issues and pitfalls</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#jit-and-configuration-objects">JIT and configuration objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#broken-or-unused-code-paths-1d">Broken or unused code paths (1D)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#broken-or-fragile-code-paths-2d">Broken or fragile code paths (2D)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#interpreting-logs-and-results">Interpreting logs and results</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#reproducibility">Reproducibility</a></li>
-</ul>
-</details></li>
 </ul>
 </details></li>
 </ul>
@@ -558,8 +550,8 @@ interpolation).</p>
 <span class="sig-name descname"><span class="pre">plot_pod_and_coeff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'img/pod_gamma.png'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.visualizer.Visualizer.plot_pod_and_coeff" title="Link to this definition">#</a></dt>
 <dd><p>Top row: mode vectors. Bottom row: every trajectory on
 <span class="math notranslate nohighlight">\(z\)</span> ± 10 % of the data range, without the amplitude floor.</p>
-<p>Requires <a class="reference internal" href="solver.html#W_POD.solver.IteratedSolver.calc_gradients_per_param" title="W_POD.solver.IteratedSolver.calc_gradients_per_param"><code class="xref py py-meth docutils literal notranslate"><span class="pre">calc_gradients_per_param()</span></code></a>
-(<a class="reference internal" href="../../caveats.html"><span class="doc">Known issues and pitfalls</span></a>).</p>
+<p>Requires an <a class="reference internal" href="solver.html#W_POD.solver.IteratedSolver" title="W_POD.solver.IteratedSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">IteratedSolver</span></code></a>, because it calls
+<a class="reference internal" href="solver.html#W_POD.solver.IteratedSolver.calc_gradients_per_param" title="W_POD.solver.IteratedSolver.calc_gradients_per_param"><code class="xref py py-meth docutils literal notranslate"><span class="pre">calc_gradients_per_param()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">

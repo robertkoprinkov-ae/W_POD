@@ -386,14 +386,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../constants.html#w-pod-two-dim-2d">W_POD.two_dim (2D)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../caveats.html">Known issues and pitfalls</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#jit-and-configuration-objects">JIT and configuration objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#broken-or-unused-code-paths-1d">Broken or unused code paths (1D)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#broken-or-fragile-code-paths-2d">Broken or fragile code paths (2D)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#interpreting-logs-and-results">Interpreting logs and results</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#reproducibility">Reproducibility</a></li>
-</ul>
-</details></li>
 </ul>
 </details></li>
 </ul>
@@ -552,7 +544,7 @@ those too.</p>
 <dd><p>Factory returning <code class="docutils literal notranslate"><span class="pre">lineax.Normal(GuardedCG(**kwargs))</span></code>. Pass it as
 <code class="docutils literal notranslate"><span class="pre">nonsym_solver</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ott.solvers.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">implicit_differentiation</span> <span class="k">as</span> <span class="n">imp</span>
-<span class="n">ImplicitDiff</span><span class="p">(</span><span class="n">solver_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">'nonsym_solver'</span><span class="p">:</span> <span class="n">GuardedNormalCG</span><span class="p">,</span> <span class="s1">'ridge_kernel'</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">})</span>
+<span class="n">ImplicitDiff</span><span class="p">(</span><span class="n">solver_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;nonsym_solver&#39;</span><span class="p">:</span> <span class="n">GuardedNormalCG</span><span class="p">,</span> <span class="s1">&#39;ridge_kernel&#39;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">})</span>
 </pre></div>
 </div>
 </dd></dl>
