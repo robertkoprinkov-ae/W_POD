@@ -88,7 +88,7 @@ import jax.numpy as jnp
 
 from W_POD.hess_diag_probed import coeff_colouring
 
-from src_wildfire.ansatz import IdentityCoordinateTransformation
+from W_POD.two_dim.ansatz import IdentityCoordinateTransformation
 
 from tqdm import tqdm
 

@@ -5,8 +5,6 @@ from jax.experimental import checkify
 
 from typing import Dict, Any, List
 
-import jaxopt
-
 from W_POD.ansatz import AnsatzConfig
 
 # only for using the scipy optimizers, which use numpy arrays

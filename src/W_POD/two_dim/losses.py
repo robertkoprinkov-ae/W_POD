@@ -10,7 +10,7 @@ import time
 import jax, jax.numpy as jnp
 from jax.flatten_util import ravel_pytree
 
-from src_wildfire.hess_diag_probed_2d import calc_hessian_diag_2d
+from W_POD.two_dim.hess_diag_probed_2d import calc_hessian_diag_2d
 
 class Losses():
     def __init__(self, pts, dx, data_z, data_exact, ansatz, l2_or_l1=1, DOWNSCALED_SIZE=None, reg_lambda=0.):

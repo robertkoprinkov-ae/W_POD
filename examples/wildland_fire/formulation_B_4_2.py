@@ -19,9 +19,9 @@ from W_POD.util import RBF_interpol
 import time as timelib
 
 import h5py
-from src_wildfire.visu import Visualizer
-from src_wildfire.losses import Losses, Losses_scaled
-from src_wildfire.ansatz import CoordinateTransformation, IdentityCoordinateTransformation, Mode, CoordinateFrame, Ansatz
+from W_POD.two_dim.visu import Visualizer
+from W_POD.two_dim.losses import Losses, Losses_scaled
+from W_POD.two_dim.ansatz import CoordinateTransformation, IdentityCoordinateTransformation, Mode, CoordinateFrame, Ansatz
 
 jax.config.update('jax_enable_x64', True)
 

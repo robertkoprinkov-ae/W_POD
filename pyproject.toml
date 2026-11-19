@@ -8,7 +8,34 @@ version = '0.0.1'
 authors = [
     { name='Robert Koprinkov', email="robert.koprinkov@onera.fr"}
 ]
-description = "W_POD"
+
+description = "Non-intrusive modal decomposition of transport-dominated data"
+readme = "readme.md"
+requires-python = ">=3.14"
+dependencies = [
+    "jax>=0.9",
+    "ott-jax>=0.6,<0.7",
+    "lineax>=0.1.0",       # guarded_solver needs lx.Normal (missing in 0.0.8)
+    "interpax>=0.3.14",
+    "scipy>=1.17",         # SLSQP callback behaviour checked on 1.17.1
+    "numpy>=2.4.6",
+    "h5py",
+    "matplotlib",
+    "tqdm",
+    "cycler",
+]
+
+[project.optional-dependencies]
+cuda = ["jax[cuda12]"]
+examples = [
+    "mpi4py",   # crossing_waves/exp2, global_local
+    "torch",    # crossing_waves/exp1/zorawski.py
+]
+tests = [
+    "pytest",
+    "openturns",  # test_rbf_openturns_crossval.py (skipped if missing)
+    "smt",        # test_util.py
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/W_POD"]

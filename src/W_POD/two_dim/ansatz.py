@@ -9,8 +9,8 @@ import scipy
 
 import interpax
 
-# The following is a partially-claude written wrapper around interpax that lets
-# the value decay smoothly outside of the interpolation domain.
+# The following 90 lines are a partially-claude written wrapper around interpax 
+# that lets the value decay smoothly outside of the interpolation domain.
 """Catmull-Rom (or any interpax method) 2D interpolation with smooth,
 decaying extrapolation outside the knot box.
 
