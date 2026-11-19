@@ -3,12 +3,13 @@
 This code is the twin brother/sister/siamese twin of our paper, with the above title. The authors are R. Koprinkov, S. Dubreuil, F. Bachoc and N. Bartoli.
 
 - The examples from the paper can be found in the `examples/` directory
-- The library can be found in the `src` directory. The 1D (`W_POD`) and 2D (`2D_test`) code are separate
+- The library can be found in the `src` directory. The 1D (`src/W_POD`) and 2D (`src/W_POD/two_dim`) code are separate
 - You can find some unit tests in the `tests` directory (courtesy of Claude Opus 5.5)
+- The documentation is at https://robertkoprinkov-ae.github.io/W_POD/
 
 The W in `W_POD` stands for "Wasserstein", because the modes were optimized with respect to the Wasserstein distance (as well as the $L_2$ distance).
 
-To code is split into a library that lets you define your modal decomposition problem and solve it and into a few files that use the library to calculate the modal decomposition for the cases from the paper. You can find the library under `src/W_POD` (1D) or `src/src_wildfire` (2D). The cases from the paper can be found in the `examples` folder.
+To code is split into a library that lets you define your modal decomposition problem and solve it and into a few files that use the library to calculate the modal decomposition for the cases from the paper. You can find the library under `src/W_POD` (1D) or `src/W_POD/two_dim` (2D). The cases from the paper can be found in the `examples` folder.
 
 The library lets you:
 - Store your data
