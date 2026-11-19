@@ -1,0 +1,9 @@
+/* Class and function names in the sidebar and the page outline in the
+   navigation's own font, not as code boxes. */
+.bd-sidenav code.literal,.bd-sidebar-secondary code.literal{font-family:inherit;font-size:inherit;
+  color:inherit;font-weight:inherit;background:none;border:0;padding:0}
+/* On wide screens the top bar holds only a second search box: hide it. */
+@media (min-width:960px){
+  .bd-header{display:none!important}
+  .bd-sidebar-primary{flex-basis:24%}
+}

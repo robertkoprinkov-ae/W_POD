@@ -1,0 +1,1144 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>W_POD.ansatz &#8212; W_POD</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2e104502" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../../_static/documentation_options.js?v=e645c8fa"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/w_pod/ansatz';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script defer="defer" src="../../_static/foldable.js?v=560eba60"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="W_POD.solver" href="solver.html" />
+    <link rel="prev" title="W_POD.interp" href="interp.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">W_POD</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">API reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html#module-W_POD">W_POD (1D)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="util.html">W_POD.util</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="util.html#W_POD.util.frankenstein_softplus"><code class="docutils literal notranslate"><span class="pre">frankenstein_softplus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="util.html#rbf-interpol">RBF_interpol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="util.html#datacreation">DataCreation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="util.html#the-data-interface">The data interface</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="modes.html">W_POD.modes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modes.html#mode-interface">Mode (interface)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="modes.html#W_POD.modes.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4"><a class="reference internal" href="modes.html#globalmode">GlobalMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modes.html#transportedmode">TransportedMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modes.html#stretchedmode">StretchedMode</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="interp.html">W_POD.interp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="interp.html#W_POD.interp.interp_decay"><code class="docutils literal notranslate"><span class="pre">interp_decay()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interp.html#W_POD.interp.interp_decay_knots"><code class="docutils literal notranslate"><span class="pre">interp_decay_knots()</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">W_POD.ansatz</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ansatz">Ansatz</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="#stage-configuration">Stage configuration</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="#W_POD.ansatz.LossWeights"><code class="docutils literal notranslate"><span class="pre">LossWeights</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#W_POD.ansatz.W2Config"><code class="docutils literal notranslate"><span class="pre">W2Config</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#W_POD.ansatz.OptimPhaseGradConfig"><code class="docutils literal notranslate"><span class="pre">OptimPhaseGradConfig</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#W_POD.ansatz.OptimPhaseCoeffConfig"><code class="docutils literal notranslate"><span class="pre">OptimPhaseCoeffConfig</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4"><a class="reference internal" href="#ansatzconfig">AnsatzConfig</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="#parameterrescaling">ParameterRescaling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="#W_POD.ansatz.LUSolver"><code class="docutils literal notranslate"><span class="pre">LUSolver()</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="solver.html">W_POD.solver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="solver.html#W_POD.solver.OptimCfg"><code class="docutils literal notranslate"><span class="pre">OptimCfg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html#W_POD.solver.L2_W1_optimizer"><code class="docutils literal notranslate"><span class="pre">L2_W1_optimizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html#W_POD.solver.IteratedSolver"><code class="docutils literal notranslate"><span class="pre">IteratedSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html#hdf5-layout-params-k-hdf5-k-1">HDF5 layout (<code class="docutils literal notranslate"><span class="pre">params_k.hdf5</span></code>, k ≥ 1)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="hess_diag_probed.html">W_POD.hess_diag_probed</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="hess_diag_probed.html#entry-points">Entry points</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.calc_hessian_diag_band"><code class="docutils literal notranslate"><span class="pre">calc_hessian_diag_band()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.calc_hessian_diag_mc"><code class="docutils literal notranslate"><span class="pre">calc_hessian_diag_mc()</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="hess_diag_probed.html#building-blocks">Building blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.hessian_diag_band"><code class="docutils literal notranslate"><span class="pre">hessian_diag_band()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.hessian_diag_mc"><code class="docutils literal notranslate"><span class="pre">hessian_diag_mc()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.coeff_colouring"><code class="docutils literal notranslate"><span class="pre">coeff_colouring()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.band_colouring"><code class="docutils literal notranslate"><span class="pre">band_colouring()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.colour_from_matrix"><code class="docutils literal notranslate"><span class="pre">colour_from_matrix()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.greedy_colour"><code class="docutils literal notranslate"><span class="pre">greedy_colour()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.ansatz_layout"><code class="docutils literal notranslate"><span class="pre">ansatz_layout()</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="guarded_solver.html">W_POD.guarded_solver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="guarded_solver.html#background">Background</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="guarded_solver.html#api">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.GuardedNormalCG"><code class="docutils literal notranslate"><span class="pre">GuardedNormalCG()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.GuardedCG"><code class="docutils literal notranslate"><span class="pre">GuardedCG</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.floor_for"><code class="docutils literal notranslate"><span class="pre">floor_for()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.FLOOR"><code class="docutils literal notranslate"><span class="pre">FLOOR</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.RECORD"><code class="docutils literal notranslate"><span class="pre">RECORD</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.SOLVES"><code class="docutils literal notranslate"><span class="pre">SOLVES</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.DEBUG"><code class="docutils literal notranslate"><span class="pre">DEBUG</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.report"><code class="docutils literal notranslate"><span class="pre">report()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.reset"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="visualizer.html">W_POD.visualizer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="visualizer.html#W_POD.visualizer.Visualizer"><code class="docutils literal notranslate"><span class="pre">Visualizer</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index.html#module-W_POD.two_dim">W_POD.two_dim (2D wildfire)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../wildfire/ansatz.html">W_POD.two_dim.ansatz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/ansatz.html#interpolation">Interpolation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.interp2d_decay"><code class="docutils literal notranslate"><span class="pre">interp2d_decay()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.clamp"><code class="docutils literal notranslate"><span class="pre">clamp()</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/ansatz.html#coordinate-transformations">Coordinate transformations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.IdentityCoordinateTransformation"><code class="docutils literal notranslate"><span class="pre">IdentityCoordinateTransformation</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.CoordinateTransformation"><code class="docutils literal notranslate"><span class="pre">CoordinateTransformation</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/ansatz.html#modes">Modes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/ansatz.html#coordinate-frames">Coordinate frames</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.CoordinateFrame"><code class="docutils literal notranslate"><span class="pre">CoordinateFrame</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4"><a class="reference internal" href="../wildfire/ansatz.html#ansatz">Ansatz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../wildfire/losses.html">W_POD.two_dim.losses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wildfire/losses.html#losses">Losses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wildfire/losses.html#losses-scaled">Losses_scaled</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html">W_POD.two_dim.hess_diag_probed_2d</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#entry-point">Entry point</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.calc_hessian_diag_2d"><code class="docutils literal notranslate"><span class="pre">calc_hessian_diag_2d()</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#building-blocks">Building blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.hessian_diag_2d"><code class="docutils literal notranslate"><span class="pre">hessian_diag_2d()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.ansatz_layout_2d"><code class="docutils literal notranslate"><span class="pre">ansatz_layout_2d()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.l2_probes"><code class="docutils literal notranslate"><span class="pre">l2_probes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.w_probes"><code class="docutils literal notranslate"><span class="pre">w_probes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.coeff_probes"><code class="docutils literal notranslate"><span class="pre">coeff_probes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.zero_sum_weights"><code class="docutils literal notranslate"><span class="pre">zero_sum_weights()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.floor_diag"><code class="docutils literal notranslate"><span class="pre">floor_diag()</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../wildfire/visu.html">W_POD.two_dim.visu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wildfire/visu.html#W_POD.two_dim.visu.Visualizer"><code class="docutils literal notranslate"><span class="pre">Visualizer</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#parameter-vector-layout">Parameter-vector layout</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../theory.html">Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../overview.html">Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#the-problem">The problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#unknowns">Unknowns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#objective">Objective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#regularised-and-unregularised-runs">Regularised and unregularised runs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#workflow">Workflow</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../installation.html">Installation and running</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../installation.html#installing-the-package">Installing the package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../installation.html#running-the-examples">Running the examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../versions.html">Code and package versions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../versions.html#package-versions">Package versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../versions.html#floating-point-precision">Floating-point precision</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial_1d.html">Tutorial: 1D crossing waves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#kernels-and-ansatz">Kernels and ansatz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#loss-configuration">Loss configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#solver">Solver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#initial-guess">Initial guess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#running-and-output">Running and output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#formulation-a-no-regularisation">Formulation A (no regularisation)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial_2d.html">Tutorial: 2D wildfire</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#ansatz">Ansatz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#initial-guess">Initial guess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#losses-and-optimisation">Losses and optimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#output">Output</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../numerics.html">Numerical methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#transformations-and-interpolation">Transformations and interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#the-w-term">The W term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#differentiating-through-sinkhorn">Differentiating through Sinkhorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#loss-normalisation">Loss normalisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#variable-scaling-hessian-preconditioning">Variable scaling (Hessian preconditioning)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#optimisers">Optimisers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#positivity-and-other-constraints">Positivity and other constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#floating-point">Floating point</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../constants.html">Hard-coded constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../constants.html#w-pod-1d">W_POD (1D)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constants.html#w-pod-two-dim-2d">W_POD.two_dim (2D)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../caveats.html">Known issues and pitfalls</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#jit-and-configuration-objects">JIT and configuration objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#broken-or-unused-code-paths-1d">Broken or unused code paths (1D)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#broken-or-fragile-code-paths-2d">Broken or fragile code paths (2D)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#interpreting-logs-and-results">Interpreting logs and results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#reproducibility">Reproducibility</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>W_POD.ansatz</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> On this page </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansatz">Ansatz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-configuration">Stage configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.LossWeights"><code class="docutils literal notranslate"><span class="pre">LossWeights</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.W2Config"><code class="docutils literal notranslate"><span class="pre">W2Config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.OptimPhaseGradConfig"><code class="docutils literal notranslate"><span class="pre">OptimPhaseGradConfig</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.OptimPhaseCoeffConfig"><code class="docutils literal notranslate"><span class="pre">OptimPhaseCoeffConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansatzconfig">AnsatzConfig</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterrescaling">ParameterRescaling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.LUSolver"><code class="docutils literal notranslate"><span class="pre">LUSolver()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-W_POD.ansatz">
+<span id="w-pod-ansatz"></span><h1>W_POD.ansatz<a class="headerlink" href="#module-W_POD.ansatz" title="Link to this heading">#</a></h1>
+<p>The ansatz (a list of modes), the configuration of one optimisation stage,
+the objective, and the variable scaling.</p>
+<section id="ansatz">
+<h2>Ansatz<a class="headerlink" href="#ansatz" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Ansatz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz" title="Link to this definition">#</a></dt>
+<dd><p>A sum of modes with a block-structured parameter vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>modes</strong> (<em>list</em>) – <a class="reference internal" href="modes.html#W_POD.modes.Mode" title="W_POD.modes.Mode"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mode</span></code></a> instances. All must share
+the same mesh.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.n_param">
+<span class="sig-name descname"><span class="pre">n_param</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.n_param" title="Link to this definition">#</a></dt>
+<dd><p>Length of the full parameter vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.n_coeff">
+<span class="sig-name descname"><span class="pre">n_coeff</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.n_coeff" title="Link to this definition">#</a></dt>
+<dd><p>Total number of trajectories over all modes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.get_param_pytree">
+<span class="sig-name descname"><span class="pre">get_param_pytree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.get_param_pytree" title="Link to this definition">#</a></dt>
+<dd><p>List with one set of parameter names per mode. Checked against
+<a class="reference internal" href="#W_POD.ansatz.OptimPhaseGradConfig" title="W_POD.ansatz.OptimPhaseGradConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimPhaseGradConfig</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.get_coeff_pytree">
+<span class="sig-name descname"><span class="pre">get_coeff_pytree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.get_coeff_pytree" title="Link to this definition">#</a></dt>
+<dd><p>List with one set of coefficient (trajectory) names per mode. Checked
+against <a class="reference internal" href="#W_POD.ansatz.OptimPhaseCoeffConfig" title="W_POD.ansatz.OptimPhaseCoeffConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimPhaseCoeffConfig</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.split_params_arr_by_mode">
+<span class="sig-name descname"><span class="pre">split_params_arr_by_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.split_params_arr_by_mode" title="Link to this definition">#</a></dt>
+<dd><p>List of per-mode blocks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.arr_to_dict">
+<span class="sig-name descname"><span class="pre">arr_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.arr_to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Flat vector → list (one entry per mode) of dicts keyed by parameter
+name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.dict_to_arr">
+<span class="sig-name descname"><span class="pre">dict_to_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_dict_per_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.dict_to_arr" title="Link to this definition">#</a></dt>
+<dd><p>Inverse of <a class="reference internal" href="#W_POD.ansatz.Ansatz.arr_to_dict" title="W_POD.ansatz.Ansatz.arr_to_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">arr_to_dict()</span></code></a>: concatenate the per-mode dicts into
+the flat vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.get_bounds_arr">
+<span class="sig-name descname"><span class="pre">get_bounds_arr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.get_bounds_arr" title="Link to this definition">#</a></dt>
+<dd><p>Concatenated <code class="docutils literal notranslate"><span class="pre">(lb,</span> <span class="pre">ub)</span></code> of all modes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.get_constraints">
+<span class="sig-name descname"><span class="pre">get_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.get_constraints" title="Link to this definition">#</a></dt>
+<dd><p>All modes’ linear constraints, padded into the full vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">scipy.optimize.LinearConstraint</span></code> with
+<code class="docutils literal notranslate"><span class="pre">keep_feasible=False</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.get_values_grid">
+<span class="sig-name descname"><span class="pre">get_values_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.get_values_grid" title="Link to this definition">#</a></dt>
+<dd><p>Reconstruction on the data mesh: the sum of the modes’
+<a class="reference internal" href="modes.html#W_POD.modes.Mode.get_values_grid" title="W_POD.modes.Mode.get_values_grid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_values_grid()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.get_values_nodes">
+<span class="sig-name descname"><span class="pre">get_values_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.get_values_nodes" title="Link to this definition">#</a></dt>
+<dd><p>Concatenated point clouds <code class="docutils literal notranslate"><span class="pre">(positions,</span> <span class="pre">masses)</span></code> of all modes, for the
+W term.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.get_values_grid_exact">
+<span class="sig-name descname"><span class="pre">get_values_grid_exact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sol_dict_per_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.get_values_grid_exact" title="Link to this definition">#</a></dt>
+<dd><p>Reconstruction from trajectory values (synthetic data).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.Ansatz.write_hdf5">
+<span class="sig-name descname"><span class="pre">write_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdf5_group</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.Ansatz.write_hdf5" title="Link to this definition">#</a></dt>
+<dd><p>Write <code class="docutils literal notranslate"><span class="pre">params_arr</span></code> and one group <code class="docutils literal notranslate"><span class="pre">mode_&lt;i&gt;</span></code> per mode.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="stage-configuration">
+<h2>Stage configuration<a class="headerlink" href="#stage-configuration" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.ansatz.LossWeights">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">LossWeights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">penalty_exceed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_norm_pod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frobenius_or_l2_squared</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.LossWeights" title="Link to this definition">#</a></dt>
+<dd><p>Weights of the objective’s terms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>l2</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(w_{L^2}\)</span>.</p></li>
+<li><p><strong>w2</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(w_W\)</span>. If <code class="docutils literal notranslate"><span class="pre">0</span></code> the W term is not computed.</p></li>
+<li><p><strong>penalty_exceed</strong> (<em>float</em>) – weight of the overshoot penalty
+<a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.calc_exceed_training" title="W_POD.ansatz.AnsatzConfig.calc_exceed_training"><code class="xref py py-meth docutils literal notranslate"><span class="pre">AnsatzConfig.calc_exceed_training()</span></code></a>.</p></li>
+<li><p><strong>reg_norm_pod</strong> (<em>float</em>) – weight of
+<a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.calc_pod_norms_reg" title="W_POD.ansatz.AnsatzConfig.calc_pod_norms_reg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">AnsatzConfig.calc_pod_norms_reg()</span></code></a>.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em>) – divide the L2 and W terms by their stage-start
+values.</p></li>
+<li><p><strong>frobenius_or_l2_squared</strong> (<em>float</em>) – exponent <span class="math notranslate nohighlight">\(q\)</span> applied to each
+snapshot’s squared <span class="math notranslate nohighlight">\(L^2\)</span> error before summing. All final runs
+pass <code class="docutils literal notranslate"><span class="pre">1.</span></code>, giving <span class="math notranslate nohighlight">\(\sum_j \Delta x\lVert D_j - U_j\rVert^2\)</span>.
+<strong>The default 2 is not what the runs use.</strong></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.LossWeights.write_hdf5">
+<span class="sig-name descname"><span class="pre">write_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.LossWeights.write_hdf5" title="Link to this definition">#</a></dt>
+<dd><p>Store the weights as <code class="docutils literal notranslate"><span class="pre">weight_l2</span></code>, <code class="docutils literal notranslate"><span class="pre">weight_w2</span></code>,
+<code class="docutils literal notranslate"><span class="pre">weight_penalty_exceed</span></code>, <code class="docutils literal notranslate"><span class="pre">weight_reg_norm_pod</span></code>,
+<code class="docutils literal notranslate"><span class="pre">weight_normalize</span></code> and <code class="docutils literal notranslate"><span class="pre">weight_frobenius_or_l2_squared</span></code> in the
+HDF5 group <code class="docutils literal notranslate"><span class="pre">grp</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.ansatz.W2Config">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">W2Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tau_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.W2Config" title="Link to this definition">#</a></dt>
+<dd><p>Settings of the OT term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tau_a</strong> (<em>float</em>) – OTT marginal relaxation of the reconstruction (1 = balanced).</p></li>
+<li><p><strong>tau_b</strong> (<em>float</em>) – same for the snapshot.</p></li>
+<li><p><strong>rescale</strong> (<em>bool</em>) – normalise the reconstruction’s masses to sum 1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.ansatz.OptimPhaseGradConfig">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">OptimPhaseGradConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansatz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grad_cfg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.OptimPhaseGradConfig" title="Link to this definition">#</a></dt>
+<dd><p>Per mode, per parameter and per loss term: does the parameter receive
+gradient from that term?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>grad_cfg</strong> – list (one per mode) of
+<code class="docutils literal notranslate"><span class="pre">{param_name:</span> <span class="pre">{'l2':</span> <span class="pre">bool,</span> <span class="pre">'w1':</span> <span class="pre">bool}}</span></code>.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – the keys do not match the ansatz.</p>
+</dd>
+</dl>
+<p>Implemented with <code class="docutils literal notranslate"><span class="pre">jax.lax.stop_gradient</span></code> in
+<a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.cut_grad" title="W_POD.ansatz.AnsatzConfig.cut_grad"><code class="xref py py-meth docutils literal notranslate"><span class="pre">AnsatzConfig.cut_grad()</span></code></a>. A parameter excluded from both terms
+still moves through the regularisation and the constraints.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="W_POD.ansatz.OptimPhaseGradConfig.grad_cfg">
+<span class="sig-name descname"><span class="pre">grad_cfg</span></span><a class="headerlink" href="#W_POD.ansatz.OptimPhaseGradConfig.grad_cfg" title="Link to this definition">#</a></dt>
+<dd><p>The configuration list passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.OptimPhaseGradConfig.write_hdf5">
+<span class="sig-name descname"><span class="pre">write_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.OptimPhaseGradConfig.write_hdf5" title="Link to this definition">#</a></dt>
+<dd><p>One boolean dataset <code class="docutils literal notranslate"><span class="pre">&lt;mode&gt;_&lt;param&gt;_&lt;term&gt;</span></code> per entry.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.ansatz.OptimPhaseCoeffConfig">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">OptimPhaseCoeffConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansatz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_cfg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.OptimPhaseCoeffConfig" title="Link to this definition">#</a></dt>
+<dd><p>RKHS-norm weights <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coeff_cfg</strong> – list (one per mode) of <code class="docutils literal notranslate"><span class="pre">{coeff_name:</span> <span class="pre">float}</span></code>.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – the keys do not match the ansatz’s coefficient
+names.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="W_POD.ansatz.OptimPhaseCoeffConfig.coeff_cfg">
+<span class="sig-name descname"><span class="pre">coeff_cfg</span></span><a class="headerlink" href="#W_POD.ansatz.OptimPhaseCoeffConfig.coeff_cfg" title="Link to this definition">#</a></dt>
+<dd><p>The configuration list passed to the constructor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.OptimPhaseCoeffConfig.write_hdf5">
+<span class="sig-name descname"><span class="pre">write_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.OptimPhaseCoeffConfig.write_hdf5" title="Link to this definition">#</a></dt>
+<dd><p>One dataset <code class="docutils literal notranslate"><span class="pre">&lt;mode&gt;_&lt;coeff&gt;</span></code> per weight.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="ansatzconfig">
+<h2>AnsatzConfig<a class="headerlink" href="#ansatzconfig" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AnsatzConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w2_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ansatz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ansatz_grad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ansatz_coeff_reg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_scaling_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'identity'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig" title="Link to this definition">#</a></dt>
+<dd><p>Everything that defines one optimisation stage’s objective.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – data object (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">dx</span></code>, <code class="docutils literal notranslate"><span class="pre">data_z</span></code>, <code class="docutils literal notranslate"><span class="pre">data_exact</span></code>).</p></li>
+<li><p><strong>weights_loss</strong> (<a class="reference internal" href="#W_POD.ansatz.LossWeights" title="W_POD.ansatz.LossWeights"><em>LossWeights</em></a>)</p></li>
+<li><p><strong>w2_config</strong> (<a class="reference internal" href="#W_POD.ansatz.W2Config" title="W_POD.ansatz.W2Config"><em>W2Config</em></a>)</p></li>
+<li><p><strong>ansatz</strong> (<a class="reference internal" href="#W_POD.ansatz.Ansatz" title="W_POD.ansatz.Ansatz"><em>Ansatz</em></a>)</p></li>
+<li><p><strong>ansatz_grad</strong> (<a class="reference internal" href="#W_POD.ansatz.OptimPhaseGradConfig" title="W_POD.ansatz.OptimPhaseGradConfig"><em>OptimPhaseGradConfig</em></a>) – must refer to the same <code class="docutils literal notranslate"><span class="pre">ansatz</span></code>.</p></li>
+<li><p><strong>ansatz_coeff_reg</strong> (<a class="reference internal" href="#W_POD.ansatz.OptimPhaseCoeffConfig" title="W_POD.ansatz.OptimPhaseCoeffConfig"><em>OptimPhaseCoeffConfig</em></a>) – must refer to the same <code class="docutils literal notranslate"><span class="pre">ansatz</span></code>.</p></li>
+<li><p><strong>variable_scaling_method</strong> (<em>str</em>) – <code class="docutils literal notranslate"><span class="pre">'identity'</span></code> or <code class="docutils literal notranslate"><span class="pre">'hessian'</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The cost methods are jitted with <code class="docutils literal notranslate"><span class="pre">self</span></code> static. Do not change the
+attributes of a config after its first evaluation (<a class="reference internal" href="../../caveats.html"><span class="doc">Known issues and pitfalls</span></a>).</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.l2_standard">
+<span class="sig-name descname"><span class="pre">l2_standard</span></span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.l2_standard" title="Link to this definition">#</a></dt>
+<dd><p>Stage normalisation <span class="math notranslate nohighlight">\(L^2_0\)</span> of the L2 term. <code class="docutils literal notranslate"><span class="pre">None</span></code> until
+<a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.update_scaling" title="W_POD.ansatz.AnsatzConfig.update_scaling"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update_scaling()</span></code></a> has run.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.w2_standard">
+<span class="sig-name descname"><span class="pre">w2_standard</span></span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.w2_standard" title="Link to this definition">#</a></dt>
+<dd><p>Stage normalisation <span class="math notranslate nohighlight">\(W_0\)</span> of the W term. <code class="docutils literal notranslate"><span class="pre">None</span></code> until
+<a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.update_scaling" title="W_POD.ansatz.AnsatzConfig.update_scaling"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update_scaling()</span></code></a> has run.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.rescale_params">
+<span class="sig-name descname"><span class="pre">rescale_params</span></span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.rescale_params" title="Link to this definition">#</a></dt>
+<dd><p>The <a class="reference internal" href="#W_POD.ansatz.ParameterRescaling" title="W_POD.ansatz.ParameterRescaling"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterRescaling</span></code></a> of this config.</p>
+</dd></dl>
+
+<p class="rubric">Loss terms</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.calc_l2">
+<span class="sig-name descname"><span class="pre">calc_l2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sol_exact</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.calc_l2" title="Link to this definition">#</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(\Delta x \sum_x (D(p;z) - U)^2\)</span> for one snapshot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.calc_l2_training">
+<span class="sig-name descname"><span class="pre">calc_l2_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.calc_l2_training" title="Link to this definition">#</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(\sum_j \ell_j^{\,q}\)</span> with <span class="math notranslate nohighlight">\(\ell_j\)</span> = <a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.calc_l2" title="W_POD.ansatz.AnsatzConfig.calc_l2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">calc_l2()</span></code></a> of
+snapshot <span class="math notranslate nohighlight">\(j\)</span>, vmapped over the snapshots.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.calc_w1">
+<span class="sig-name descname"><span class="pre">calc_w1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sol_exact</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_full</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_danskin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.calc_w1" title="Link to this definition">#</a></dt>
+<dd><p>Entropic OT cost (<code class="docutils literal notranslate"><span class="pre">reg_ot_cost</span></code>) between the reconstruction’s point
+cloud and the snapshot (see <a class="reference internal" href="../../numerics.html"><span class="doc">Numerical methods</span></a>), or <code class="docutils literal notranslate"><span class="pre">+inf</span></code> when
+that cost is negative (a diverged Sinkhorn solve).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>use_danskin</strong> – <code class="docutils literal notranslate"><span class="pre">False</span></code> forces implicit differentiation
+(<code class="docutils literal notranslate"><span class="pre">ridge_kernel=1e-6</span></code>) with a linear solver chosen from the dtype
+at trace time: <a class="reference internal" href="#W_POD.ansatz.LUSolver" title="W_POD.ansatz.LUSolver"><code class="xref py py-func docutils literal notranslate"><span class="pre">LUSolver()</span></code></a> in fp32,
+<a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.GuardedNormalCG" title="W_POD.guarded_solver.GuardedNormalCG"><code class="xref py py-func docutils literal notranslate"><span class="pre">GuardedNormalCG()</span></code></a> in fp64. Anything else
+uses OTT’s default, which is Danskin.</p></li>
+<li><p><strong>return_full</strong> (<em>bool</em>) – also return the OTT output object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.calc_w1_training">
+<span class="sig-name descname"><span class="pre">calc_w1_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_danskin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.calc_w1_training" title="Link to this definition">#</a></dt>
+<dd><p>Sum of <a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.calc_w1" title="W_POD.ansatz.AnsatzConfig.calc_w1"><code class="xref py py-meth docutils literal notranslate"><span class="pre">calc_w1()</span></code></a> over the snapshots (power 1, no square root).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.calc_w1_div">
+<span class="sig-name descname"><span class="pre">calc_w1_div</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sol_exact</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_full</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.calc_w1_div" title="Link to this definition">#</a></dt>
+<dd><p>Sinkhorn <em>divergence</em> alternative to <a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.calc_w1" title="W_POD.ansatz.AnsatzConfig.calc_w1"><code class="xref py py-meth docutils literal notranslate"><span class="pre">calc_w1()</span></code></a>. Not used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.calc_reg">
+<span class="sig-name descname"><span class="pre">calc_reg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.calc_reg" title="Link to this definition">#</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(\sum_c \lambda_c\, a_c^\top K_c a_c\)</span>. With <code class="docutils literal notranslate"><span class="pre">verbose</span></code> it also
+returns the per-mode breakdown.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.calc_exceed">
+<span class="sig-name descname"><span class="pre">calc_exceed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sol_exact</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.calc_exceed" title="Link to this definition">#</a></dt>
+<dd><p>Overshoot penalty of one snapshot,
+<span class="math notranslate nohighlight">\(\Delta x \sum \max(D - U, 0)^2\)</span>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.calc_exceed_training">
+<span class="sig-name descname"><span class="pre">calc_exceed_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.calc_exceed_training" title="Link to this definition">#</a></dt>
+<dd><p>Sum over the snapshots of <a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.calc_exceed" title="W_POD.ansatz.AnsatzConfig.calc_exceed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">calc_exceed()</span></code></a> <strong>squared</strong>, so the
+overshoot enters to the fourth power (<a class="reference internal" href="../../caveats.html"><span class="doc">Known issues and pitfalls</span></a>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.calc_pod_norms_reg">
+<span class="sig-name descname"><span class="pre">calc_pod_norms_reg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.calc_pod_norms_reg" title="Link to this definition">#</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(\sum_i (\Delta x \lVert\varphi_i\rVert^2 - 1)^2\)</span>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.cut_grad">
+<span class="sig-name descname"><span class="pre">cut_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_term_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.cut_grad" title="Link to this definition">#</a></dt>
+<dd><p>Copy of <code class="docutils literal notranslate"><span class="pre">params_arr</span></code> with <code class="docutils literal notranslate"><span class="pre">stop_gradient</span></code> on the blocks that
+<a class="reference internal" href="#W_POD.ansatz.OptimPhaseGradConfig" title="W_POD.ansatz.OptimPhaseGradConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimPhaseGradConfig</span></code></a> excludes from <code class="docutils literal notranslate"><span class="pre">loss_term_name</span></code>
+(<code class="docutils literal notranslate"><span class="pre">'l2'</span></code> or <code class="docutils literal notranslate"><span class="pre">'w1'</span></code>).</p>
+</dd></dl>
+
+<p class="rubric">Objective</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig._cost">
+<span class="sig-name descname"><span class="pre">_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_l2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_w2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_danskin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig._cost" title="Link to this definition">#</a></dt>
+<dd><p>The stage objective in unscaled variables:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  w_l2 * L2(cut_grad(p,'l2')) / normalize_l2
++ w_w2 * W (cut_grad(p,'w1')) / normalize_w2
++ calc_reg(p) + w_exceed * exceed(p) + w_pod * pod_norm_reg(p)
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">weights_loss.w2</span> <span class="pre">==</span> <span class="pre">0</span></code> the W term is skipped and L2 is divided by
+<a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.l2_standard" title="W_POD.ansatz.AnsatzConfig.l2_standard"><code class="xref py py-attr docutils literal notranslate"><span class="pre">l2_standard</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig._cost_scaled">
+<span class="sig-name descname"><span class="pre">_cost_scaled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_l2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_w1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling_x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig._cost_scaled" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">_cost(params_arr</span> <span class="pre">*</span> <span class="pre">scaling_x,</span> <span class="pre">norm_l2,</span> <span class="pre">norm_w1)</span></code> (jitted).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.cost_jit_scaled">
+<span class="sig-name descname"><span class="pre">cost_jit_scaled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.cost_jit_scaled" title="Link to this definition">#</a></dt>
+<dd><p>Objective in the <strong>scaled</strong> variables <span class="math notranslate nohighlight">\(y = p / s\)</span> that the
+optimiser sees, using the current <a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.l2_standard" title="W_POD.ansatz.AnsatzConfig.l2_standard"><code class="xref py py-attr docutils literal notranslate"><span class="pre">l2_standard</span></code></a>,
+<a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.w2_standard" title="W_POD.ansatz.AnsatzConfig.w2_standard"><code class="xref py py-attr docutils literal notranslate"><span class="pre">w2_standard</span></code></a> and scaling.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.cost_jit_scaled_grad">
+<span class="sig-name descname"><span class="pre">cost_jit_scaled_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.cost_jit_scaled_grad" title="Link to this definition">#</a></dt>
+<dd><p>Gradient of <a class="reference internal" href="#W_POD.ansatz.AnsatzConfig.cost_jit_scaled" title="W_POD.ansatz.AnsatzConfig.cost_jit_scaled"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cost_jit_scaled()</span></code></a> with respect to the scaled
+variables.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.rel_error_scaling_factor">
+<span class="sig-name descname"><span class="pre">rel_error_scaling_factor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.rel_error_scaling_factor" title="Link to this definition">#</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(S = \Delta x \sum_j (\sum_x U_j^2)^{q}\)</span>. With <span class="math notranslate nohighlight">\(q = 1\)</span>
+this is the squared Frobenius norm of the data, so
+<span class="math notranslate nohighlight">\(\sqrt{L^2/S}\)</span> is the relative error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.update_scaling">
+<span class="sig-name descname"><span class="pre">update_scaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.update_scaling" title="Link to this definition">#</a></dt>
+<dd><p>Start-of-stage normalisation:
+<span class="math notranslate nohighlight">\(L^2_0 = \max(L^2(p), 10^{-4} S)\)</span>,
+<span class="math notranslate nohighlight">\(W_0 = \max(W(p), 10^{-3})\)</span>. Then calls
+<a class="reference internal" href="#W_POD.ansatz.ParameterRescaling.reset_scaling" title="W_POD.ansatz.ParameterRescaling.reset_scaling"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ParameterRescaling.reset_scaling()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.get_bounds_arr">
+<span class="sig-name descname"><span class="pre">get_bounds_arr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.get_bounds_arr" title="Link to this definition">#</a></dt>
+<dd><p>The ansatz bounds mapped to the scaled variables, <code class="docutils literal notranslate"><span class="pre">(lb/s,</span> <span class="pre">ub/s)</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.get_constraints">
+<span class="sig-name descname"><span class="pre">get_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.get_constraints" title="Link to this definition">#</a></dt>
+<dd><p>The ansatz linear constraints mapped to the scaled variables
+(<span class="math notranslate nohighlight">\(A \to A\,\mathrm{diag}(s)\)</span>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.AnsatzConfig.write_hdf5">
+<span class="sig-name descname"><span class="pre">write_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.AnsatzConfig.write_hdf5" title="Link to this definition">#</a></dt>
+<dd><p>Ansatz blocks, plus a group <code class="docutils literal notranslate"><span class="pre">ansatz_cfg</span></code> with the loss weights and
+the <code class="docutils literal notranslate"><span class="pre">grad</span></code> and <code class="docutils literal notranslate"><span class="pre">reg</span></code> subgroups.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="parameterrescaling">
+<h2>ParameterRescaling<a class="headerlink" href="#parameterrescaling" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ParameterRescaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansatz_cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_l2_training</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_w1_training</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'identity'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling" title="Link to this definition">#</a></dt>
+<dd><p>Diagonal change of variables <span class="math notranslate nohighlight">\(p = s \odot y\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>method</strong> (<em>str</em>) – <code class="docutils literal notranslate"><span class="pre">'identity'</span></code> (<span class="math notranslate nohighlight">\(s = 1\)</span>) or <code class="docutils literal notranslate"><span class="pre">'hessian'</span></code>.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling.scaling_x">
+<span class="sig-name descname"><span class="pre">scaling_x</span></span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling.scaling_x" title="Link to this definition">#</a></dt>
+<dd><p>The vector <span class="math notranslate nohighlight">\(s\)</span>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling.reset_scaling">
+<span class="sig-name descname"><span class="pre">reset_scaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling.reset_scaling" title="Link to this definition">#</a></dt>
+<dd><p>With <code class="docutils literal notranslate"><span class="pre">'hessian'</span></code>: compute the Hessian diagonal <span class="math notranslate nohighlight">\(h\)</span> of
+<code class="docutils literal notranslate"><span class="pre">ansatz_cfg._cost</span></code> at <code class="docutils literal notranslate"><span class="pre">x0</span></code> with
+<a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.calc_hessian_diag_band" title="W_POD.hess_diag_probed.calc_hessian_diag_band"><code class="xref py py-func docutils literal notranslate"><span class="pre">calc_hessian_diag_band()</span></code></a>, then set
+<span class="math notranslate nohighlight">\(s = 1/\sqrt{\max(|h|, 10^{-6}\max|h|)}\)</span>, so
+<span class="math notranslate nohighlight">\(s_{\max}/s_{\min} \le 10^3\)</span>. No geometric-mean normalisation
+is applied.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling.scaled_to_unscaled">
+<span class="sig-name descname"><span class="pre">scaled_to_unscaled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling.scaled_to_unscaled" title="Link to this definition">#</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(p = x \cdot s\)</span>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling.unscaled_to_scaled">
+<span class="sig-name descname"><span class="pre">unscaled_to_scaled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling.unscaled_to_scaled" title="Link to this definition">#</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(y = x / s\)</span>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling.unscaled_to_scaled_bounds">
+<span class="sig-name descname"><span class="pre">unscaled_to_scaled_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling.unscaled_to_scaled_bounds" title="Link to this definition">#</a></dt>
+<dd><p><span class="math notranslate nohighlight">\((lb/s,\ ub/s)\)</span>. Infinite bounds stay infinite.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling.unscaled_to_scaled_constraints">
+<span class="sig-name descname"><span class="pre">unscaled_to_scaled_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">constraints</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling.unscaled_to_scaled_constraints" title="Link to this definition">#</a></dt>
+<dd><p>New <code class="docutils literal notranslate"><span class="pre">LinearConstraint</span></code> with <span class="math notranslate nohighlight">\(A\,\mathrm{diag}(s)\)</span> and the
+same bounds.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling._hess_diag_exact">
+<span class="sig-name descname"><span class="pre">_hess_diag_exact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_l2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_w1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling._hess_diag_exact" title="Link to this definition">#</a></dt>
+<dd><p>Exact diagonal, one HVP per parameter (<code class="docutils literal notranslate"><span class="pre">use_danskin=False</span></code>).
+Diagnostic, not called.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling._hess_exact">
+<span class="sig-name descname"><span class="pre">_hess_exact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_l2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_w1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling._hess_exact" title="Link to this definition">#</a></dt>
+<dd><p>Full Hessian, row by row. Diagnostic, not called.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.ansatz.ParameterRescaling._hess_diag">
+<span class="sig-name descname"><span class="pre">_hess_diag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argnums</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.ParameterRescaling._hess_diag" title="Link to this definition">#</a></dt>
+<dd><p>Hutchinson (Rademacher) estimate of the diagonal. Not called.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="W_POD.ansatz.LUSolver">
+<span class="sig-name descname"><span class="pre">LUSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.ansatz.LUSolver" title="Link to this definition">#</a></dt>
+<dd><p>Factory returning <code class="docutils literal notranslate"><span class="pre">lineax.LU()</span></code>. It accepts and ignores the
+<code class="docutils literal notranslate"><span class="pre">rtol</span></code>/<code class="docutils literal notranslate"><span class="pre">atol</span></code> that OTT passes. Used as <code class="docutils literal notranslate"><span class="pre">nonsym_solver</span></code> of the
+implicit differentiation in fp32.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="interp.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">W_POD.interp</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="solver.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">W_POD.solver</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansatz">Ansatz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-configuration">Stage configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.LossWeights"><code class="docutils literal notranslate"><span class="pre">LossWeights</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.W2Config"><code class="docutils literal notranslate"><span class="pre">W2Config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.OptimPhaseGradConfig"><code class="docutils literal notranslate"><span class="pre">OptimPhaseGradConfig</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.OptimPhaseCoeffConfig"><code class="docutils literal notranslate"><span class="pre">OptimPhaseCoeffConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansatzconfig">AnsatzConfig</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterrescaling">ParameterRescaling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.ansatz.LUSolver"><code class="docutils literal notranslate"><span class="pre">LUSolver()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Koprinkov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Robert Koprinkov.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

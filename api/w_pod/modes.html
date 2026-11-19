@@ -1,0 +1,836 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>W_POD.modes &#8212; W_POD</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=4418a689" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2e104502" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../../_static/documentation_options.js?v=e645c8fa"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/w_pod/modes';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script defer="defer" src="../../_static/foldable.js?v=560eba60"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="W_POD.interp" href="interp.html" />
+    <link rel="prev" title="W_POD.util" href="util.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">W_POD</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">API reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html#module-W_POD">W_POD (1D)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="util.html">W_POD.util</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="util.html#W_POD.util.frankenstein_softplus"><code class="docutils literal notranslate"><span class="pre">frankenstein_softplus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="util.html#rbf-interpol">RBF_interpol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="util.html#datacreation">DataCreation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="util.html#the-data-interface">The data interface</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">W_POD.modes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="#mode-interface">Mode (interface)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="#W_POD.modes.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4"><a class="reference internal" href="#globalmode">GlobalMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transportedmode">TransportedMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stretchedmode">StretchedMode</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="interp.html">W_POD.interp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="interp.html#W_POD.interp.interp_decay"><code class="docutils literal notranslate"><span class="pre">interp_decay()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interp.html#W_POD.interp.interp_decay_knots"><code class="docutils literal notranslate"><span class="pre">interp_decay_knots()</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ansatz.html">W_POD.ansatz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ansatz.html#ansatz">Ansatz</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="ansatz.html#stage-configuration">Stage configuration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="ansatz.html#W_POD.ansatz.LossWeights"><code class="docutils literal notranslate"><span class="pre">LossWeights</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="ansatz.html#W_POD.ansatz.W2Config"><code class="docutils literal notranslate"><span class="pre">W2Config</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="ansatz.html#W_POD.ansatz.OptimPhaseGradConfig"><code class="docutils literal notranslate"><span class="pre">OptimPhaseGradConfig</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="ansatz.html#W_POD.ansatz.OptimPhaseCoeffConfig"><code class="docutils literal notranslate"><span class="pre">OptimPhaseCoeffConfig</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4"><a class="reference internal" href="ansatz.html#ansatzconfig">AnsatzConfig</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="ansatz.html#parameterrescaling">ParameterRescaling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="ansatz.html#W_POD.ansatz.LUSolver"><code class="docutils literal notranslate"><span class="pre">LUSolver()</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="solver.html">W_POD.solver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="solver.html#W_POD.solver.OptimCfg"><code class="docutils literal notranslate"><span class="pre">OptimCfg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html#W_POD.solver.L2_W1_optimizer"><code class="docutils literal notranslate"><span class="pre">L2_W1_optimizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html#W_POD.solver.IteratedSolver"><code class="docutils literal notranslate"><span class="pre">IteratedSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html#hdf5-layout-params-k-hdf5-k-1">HDF5 layout (<code class="docutils literal notranslate"><span class="pre">params_k.hdf5</span></code>, k ≥ 1)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="hess_diag_probed.html">W_POD.hess_diag_probed</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="hess_diag_probed.html#entry-points">Entry points</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.calc_hessian_diag_band"><code class="docutils literal notranslate"><span class="pre">calc_hessian_diag_band()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.calc_hessian_diag_mc"><code class="docutils literal notranslate"><span class="pre">calc_hessian_diag_mc()</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="hess_diag_probed.html#building-blocks">Building blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.hessian_diag_band"><code class="docutils literal notranslate"><span class="pre">hessian_diag_band()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.hessian_diag_mc"><code class="docutils literal notranslate"><span class="pre">hessian_diag_mc()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.coeff_colouring"><code class="docutils literal notranslate"><span class="pre">coeff_colouring()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.band_colouring"><code class="docutils literal notranslate"><span class="pre">band_colouring()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.colour_from_matrix"><code class="docutils literal notranslate"><span class="pre">colour_from_matrix()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.greedy_colour"><code class="docutils literal notranslate"><span class="pre">greedy_colour()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="hess_diag_probed.html#W_POD.hess_diag_probed.ansatz_layout"><code class="docutils literal notranslate"><span class="pre">ansatz_layout()</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="guarded_solver.html">W_POD.guarded_solver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="guarded_solver.html#background">Background</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="guarded_solver.html#api">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.GuardedNormalCG"><code class="docutils literal notranslate"><span class="pre">GuardedNormalCG()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.GuardedCG"><code class="docutils literal notranslate"><span class="pre">GuardedCG</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.floor_for"><code class="docutils literal notranslate"><span class="pre">floor_for()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.FLOOR"><code class="docutils literal notranslate"><span class="pre">FLOOR</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.RECORD"><code class="docutils literal notranslate"><span class="pre">RECORD</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.SOLVES"><code class="docutils literal notranslate"><span class="pre">SOLVES</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.DEBUG"><code class="docutils literal notranslate"><span class="pre">DEBUG</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.report"><code class="docutils literal notranslate"><span class="pre">report()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guarded_solver.html#W_POD.guarded_solver.reset"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="visualizer.html">W_POD.visualizer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="visualizer.html#W_POD.visualizer.Visualizer"><code class="docutils literal notranslate"><span class="pre">Visualizer</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index.html#module-W_POD.two_dim">W_POD.two_dim (2D wildfire)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../wildfire/ansatz.html">W_POD.two_dim.ansatz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/ansatz.html#interpolation">Interpolation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.interp2d_decay"><code class="docutils literal notranslate"><span class="pre">interp2d_decay()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.clamp"><code class="docutils literal notranslate"><span class="pre">clamp()</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/ansatz.html#coordinate-transformations">Coordinate transformations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.IdentityCoordinateTransformation"><code class="docutils literal notranslate"><span class="pre">IdentityCoordinateTransformation</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.CoordinateTransformation"><code class="docutils literal notranslate"><span class="pre">CoordinateTransformation</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/ansatz.html#modes">Modes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/ansatz.html#coordinate-frames">Coordinate frames</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/ansatz.html#W_POD.two_dim.ansatz.CoordinateFrame"><code class="docutils literal notranslate"><span class="pre">CoordinateFrame</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4"><a class="reference internal" href="../wildfire/ansatz.html#ansatz">Ansatz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../wildfire/losses.html">W_POD.two_dim.losses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wildfire/losses.html#losses">Losses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wildfire/losses.html#losses-scaled">Losses_scaled</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html">W_POD.two_dim.hess_diag_probed_2d</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#entry-point">Entry point</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.calc_hessian_diag_2d"><code class="docutils literal notranslate"><span class="pre">calc_hessian_diag_2d()</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#building-blocks">Building blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.hessian_diag_2d"><code class="docutils literal notranslate"><span class="pre">hessian_diag_2d()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.ansatz_layout_2d"><code class="docutils literal notranslate"><span class="pre">ansatz_layout_2d()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.l2_probes"><code class="docutils literal notranslate"><span class="pre">l2_probes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.w_probes"><code class="docutils literal notranslate"><span class="pre">w_probes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.coeff_probes"><code class="docutils literal notranslate"><span class="pre">coeff_probes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.zero_sum_weights"><code class="docutils literal notranslate"><span class="pre">zero_sum_weights()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../wildfire/hess_diag_probed_2d.html#W_POD.two_dim.hess_diag_probed_2d.floor_diag"><code class="docutils literal notranslate"><span class="pre">floor_diag()</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../wildfire/visu.html">W_POD.two_dim.visu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wildfire/visu.html#W_POD.two_dim.visu.Visualizer"><code class="docutils literal notranslate"><span class="pre">Visualizer</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#parameter-vector-layout">Parameter-vector layout</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../theory.html">Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../overview.html">Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#the-problem">The problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#unknowns">Unknowns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#objective">Objective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#regularised-and-unregularised-runs">Regularised and unregularised runs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview.html#workflow">Workflow</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../installation.html">Installation and running</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../installation.html#installing-the-package">Installing the package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../installation.html#running-the-examples">Running the examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../versions.html">Code and package versions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../versions.html#package-versions">Package versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../versions.html#floating-point-precision">Floating-point precision</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial_1d.html">Tutorial: 1D crossing waves</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#kernels-and-ansatz">Kernels and ansatz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#loss-configuration">Loss configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#solver">Solver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#initial-guess">Initial guess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#running-and-output">Running and output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_1d.html#formulation-a-no-regularisation">Formulation A (no regularisation)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tutorial_2d.html">Tutorial: 2D wildfire</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#ansatz">Ansatz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#initial-guess">Initial guess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#losses-and-optimisation">Losses and optimisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorial_2d.html#output">Output</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../numerics.html">Numerical methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#transformations-and-interpolation">Transformations and interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#the-w-term">The W term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#differentiating-through-sinkhorn">Differentiating through Sinkhorn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#loss-normalisation">Loss normalisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#variable-scaling-hessian-preconditioning">Variable scaling (Hessian preconditioning)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#optimisers">Optimisers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#positivity-and-other-constraints">Positivity and other constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../numerics.html#floating-point">Floating point</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../constants.html">Hard-coded constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../constants.html#w-pod-1d">W_POD (1D)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constants.html#w-pod-two-dim-2d">W_POD.two_dim (2D)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../caveats.html">Known issues and pitfalls</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#jit-and-configuration-objects">JIT and configuration objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#broken-or-unused-code-paths-1d">Broken or unused code paths (1D)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#broken-or-fragile-code-paths-2d">Broken or fragile code paths (2D)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#interpreting-logs-and-results">Interpreting logs and results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../caveats.html#reproducibility">Reproducibility</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>W_POD.modes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> On this page </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-interface">Mode (interface)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.modes.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#globalmode">GlobalMode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transportedmode">TransportedMode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stretchedmode">StretchedMode</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-W_POD.modes">
+<span id="w-pod-modes"></span><h1>W_POD.modes<a class="headerlink" href="#module-W_POD.modes" title="Link to this heading">#</a></h1>
+<p>One class per kind of mode. A mode owns its mesh and its kernel
+interpolators. It converts its slice of the parameter vector to and from a
+dict, and evaluates itself either on the data mesh (for the L2 term) or as a
+transported point cloud (for the W term).</p>
+<section id="mode-interface">
+<h2>Mode (interface)<a class="headerlink" href="#mode-interface" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.modes.Mode">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Mode</span></span><a class="headerlink" href="#W_POD.modes.Mode" title="Link to this definition">#</a></dt>
+<dd><p>Abstract base class. Every method below raises <code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code>
+except <a class="reference internal" href="#W_POD.modes.Mode.n_coeff" title="W_POD.modes.Mode.n_coeff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">n_coeff()</span></code></a> and <a class="reference internal" href="#W_POD.modes.Mode.n_pod" title="W_POD.modes.Mode.n_pod"><code class="xref py py-meth docutils literal notranslate"><span class="pre">n_pod()</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.n_param">
+<span class="sig-name descname"><span class="pre">n_param</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.n_param" title="Link to this definition">#</a></dt>
+<dd><p>Length of this mode’s block in the parameter vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.n_coeff">
+<span class="sig-name descname"><span class="pre">n_coeff</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.n_coeff" title="Link to this definition">#</a></dt>
+<dd><p>Number of trajectories (<code class="docutils literal notranslate"><span class="pre">len(get_coeff_names())</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.n_pod">
+<span class="sig-name descname"><span class="pre">n_pod</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.n_pod" title="Link to this definition">#</a></dt>
+<dd><p>Number of mode-vector parameters (<code class="docutils literal notranslate"><span class="pre">len(get_pod_names())</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_mode_name">
+<span class="sig-name descname"><span class="pre">get_mode_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_mode_name" title="Link to this definition">#</a></dt>
+<dd><p>Class name as a string, used in plots.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_param_names">
+<span class="sig-name descname"><span class="pre">get_param_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_param_names" title="Link to this definition">#</a></dt>
+<dd><p>Names of all parameter blocks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_coeff_names">
+<span class="sig-name descname"><span class="pre">get_coeff_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_coeff_names" title="Link to this definition">#</a></dt>
+<dd><p>Names of the blocks that are kernel coefficients (trajectories in
+<span class="math notranslate nohighlight">\(z\)</span>). These are the ones regularised in the RKHS norm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_pod_names">
+<span class="sig-name descname"><span class="pre">get_pod_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_pod_names" title="Link to this definition">#</a></dt>
+<dd><p>Names of the blocks that hold the mode vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_RBF">
+<span class="sig-name descname"><span class="pre">get_RBF</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_RBF" title="Link to this definition">#</a></dt>
+<dd><p>Dict from coefficient name to its <a class="reference internal" href="util.html#W_POD.util.RBF_interpol" title="W_POD.util.RBF_interpol"><code class="xref py py-class docutils literal notranslate"><span class="pre">RBF_interpol</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_param_bounds_arr">
+<span class="sig-name descname"><span class="pre">get_param_bounds_arr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_param_bounds_arr" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">(lb,</span> <span class="pre">ub)</span></code> arrays of length <a class="reference internal" href="#W_POD.modes.Mode.n_param" title="W_POD.modes.Mode.n_param"><code class="xref py py-meth docutils literal notranslate"><span class="pre">n_param()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_constraints">
+<span class="sig-name descname"><span class="pre">get_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_constraints" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">(A,</span> <span class="pre">lb,</span> <span class="pre">ub)</span></code> of linear constraints <span class="math notranslate nohighlight">\(lb \le A p \le ub\)</span> on
+this mode’s block.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.calc_coeff">
+<span class="sig-name descname"><span class="pre">calc_coeff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeff_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">softplus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variances</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.calc_coeff" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate one trajectory at <code class="docutils literal notranslate"><span class="pre">z</span></code>. Amplitudes go through
+<a class="reference internal" href="util.html#W_POD.util.frankenstein_softplus" title="W_POD.util.frankenstein_softplus"><code class="xref py py-func docutils literal notranslate"><span class="pre">frankenstein_softplus()</span></code></a> when <code class="docutils literal notranslate"><span class="pre">softplus</span></code> is true.
+With <code class="docutils literal notranslate"><span class="pre">variances</span></code> the GP variance is returned as well.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_values_grid">
+<span class="sig-name descname"><span class="pre">get_values_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_values_grid" title="Link to this definition">#</a></dt>
+<dd><p>The mode’s contribution on the data mesh at parameter <code class="docutils literal notranslate"><span class="pre">z</span></code> (pulled
+back and interpolated). Used by the L2 term.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_values_nodes">
+<span class="sig-name descname"><span class="pre">get_values_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_values_nodes" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">(positions,</span> <span class="pre">masses)</span></code>: the mode’s own nodes after the forward
+transformation, and the mode values times the amplitude. Used by the
+W term.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.get_values_grid_exact">
+<span class="sig-name descname"><span class="pre">get_values_grid_exact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sol_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.get_values_grid_exact" title="Link to this definition">#</a></dt>
+<dd><p>As <a class="reference internal" href="#W_POD.modes.Mode.get_values_grid" title="W_POD.modes.Mode.get_values_grid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_values_grid()</span></code></a>, but from trajectory <em>values</em>
+(<code class="docutils literal notranslate"><span class="pre">'beta_value'</span></code>, …) instead of coefficients. Uses linear
+interpolation with zero outside the mesh. Used for synthetic data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.arr_to_dict">
+<span class="sig-name descname"><span class="pre">arr_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.arr_to_dict" title="Link to this definition">#</a></dt>
+<dd><p>This mode’s block → dict keyed by <a class="reference internal" href="#W_POD.modes.Mode.get_param_names" title="W_POD.modes.Mode.get_param_names"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_param_names()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.dict_to_arr">
+<span class="sig-name descname"><span class="pre">dict_to_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.dict_to_arr" title="Link to this definition">#</a></dt>
+<dd><p>Inverse of <a class="reference internal" href="#W_POD.modes.Mode.arr_to_dict" title="W_POD.modes.Mode.arr_to_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">arr_to_dict()</span></code></a>. The output length must equal
+<a class="reference internal" href="#W_POD.modes.Mode.n_param" title="W_POD.modes.Mode.n_param"><code class="xref py py-meth docutils literal notranslate"><span class="pre">n_param()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="W_POD.modes.Mode.write_hdf5">
+<span class="sig-name descname"><span class="pre">write_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdf5_group</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.Mode.write_hdf5" title="Link to this definition">#</a></dt>
+<dd><p>Write each named block as a dataset of <code class="docutils literal notranslate"><span class="pre">hdf5_group</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="globalmode">
+<h2>GlobalMode<a class="headerlink" href="#globalmode" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.modes.GlobalMode">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RBF_alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.GlobalMode" title="Link to this definition">#</a></dt>
+<dd><p>Stationary mode <span class="math notranslate nohighlight">\(\alpha(z)\,\varphi(x)\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – mesh, shape <code class="docutils literal notranslate"><span class="pre">(N,)</span></code>.</p></li>
+<li><p><strong>RBF_alpha</strong> – interpolator of <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Parameters: <code class="docutils literal notranslate"><span class="pre">pod_global</span></code> (N), <code class="docutils literal notranslate"><span class="pre">alpha_coeff</span></code>.</p></li>
+<li><p>Bounds: <code class="docutils literal notranslate"><span class="pre">pod_global</span></code> <span class="math notranslate nohighlight">\(\ge 10^{-6}\)</span>.</p></li>
+<li><p>Constraints: <span class="math notranslate nohighlight">\(10^{-6} \le \alpha(z_j) \le 100\)</span> at every snapshot.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="transportedmode">
+<h2>TransportedMode<a class="headerlink" href="#transportedmode" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.modes.TransportedMode">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">TransportedMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RBF_beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RBF_gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma_increasing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma_decreasing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.TransportedMode" title="Link to this definition">#</a></dt>
+<dd><p>Shifted mode <span class="math notranslate nohighlight">\(\beta(z)\,\varphi(x - \gamma(z))\)</span>. This is the mode
+used in all 1D final runs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – mesh, shape <code class="docutils literal notranslate"><span class="pre">(N,)</span></code>.</p></li>
+<li><p><strong>RBF_beta</strong> – interpolator of the amplitude <span class="math notranslate nohighlight">\(\beta\)</span>.</p></li>
+<li><p><strong>RBF_gamma</strong> – interpolator of the shift <span class="math notranslate nohighlight">\(\gamma\)</span>.</p></li>
+<li><p><strong>gamma_increasing</strong> (<em>bool</em>) – constrain <span class="math notranslate nohighlight">\(\gamma(z_{j+1}) \ge \gamma(z_j)\)</span>.</p></li>
+<li><p><strong>gamma_decreasing</strong> (<em>bool</em>) – constrain <span class="math notranslate nohighlight">\(\gamma(z_{j+1}) \le \gamma(z_j)\)</span>.
+At most one of the two may be set.</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Parameters: <code class="docutils literal notranslate"><span class="pre">pod_local</span></code> (N), <code class="docutils literal notranslate"><span class="pre">beta_coeff</span></code>, <code class="docutils literal notranslate"><span class="pre">gamma_coeff</span></code>. The
+flat block is ordered <code class="docutils literal notranslate"><span class="pre">pod_local</span></code>, <code class="docutils literal notranslate"><span class="pre">beta_coeff</span></code>, <code class="docutils literal notranslate"><span class="pre">gamma_coeff</span></code>.</p></li>
+<li><p><a class="reference internal" href="#W_POD.modes.Mode.get_values_grid" title="W_POD.modes.Mode.get_values_grid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_values_grid()</span></code></a>:
+<code class="docutils literal notranslate"><span class="pre">frankenstein_softplus(beta(z))</span> <span class="pre">*</span> <span class="pre">interp_decay(x</span> <span class="pre">-</span> <span class="pre">gamma(z),</span> <span class="pre">x,</span> <span class="pre">pod_local,</span>
+<span class="pre">method='catmull-rom',</span> <span class="pre">decay_rate=15)</span></code>.</p></li>
+<li><p><a class="reference internal" href="#W_POD.modes.Mode.get_values_nodes" title="W_POD.modes.Mode.get_values_nodes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_values_nodes()</span></code></a>: positions <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">gamma(z)</span></code>, masses
+<code class="docutils literal notranslate"><span class="pre">frankenstein_softplus(beta(z))</span> <span class="pre">*</span> <span class="pre">pod_local</span></code>.</p></li>
+<li><p>Bounds: <code class="docutils literal notranslate"><span class="pre">pod_local</span></code> <span class="math notranslate nohighlight">\(\ge 10^{-6}\)</span>. The coefficients are free.</p></li>
+<li><p>Constraints: <span class="math notranslate nohighlight">\(\beta(z_j) \ge 10^{-3}\)</span> (linear in the
+coefficients), plus the optional monotonicity of <span class="math notranslate nohighlight">\(\gamma\)</span>.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="stretchedmode">
+<h2>StretchedMode<a class="headerlink" href="#stretchedmode" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="W_POD.modes.StretchedMode">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">StretchedMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RBF_beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RBF_gamma_shift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RBF_gamma_stretch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#W_POD.modes.StretchedMode" title="Link to this definition">#</a></dt>
+<dd><p>Shifted and stretched mode. The forward map is</p>
+<div class="math notranslate nohighlight">
+\[x' = \gamma_s(z) + c + \gamma_r(z)\,(x - c), \qquad c = (\max x + \min x)/2,\]</div>
+<p>and the mode is evaluated on the mesh through the inverse map, using
+<a class="reference internal" href="interp.html#W_POD.interp.interp_decay_knots" title="W_POD.interp.interp_decay_knots"><code class="xref py py-func docutils literal notranslate"><span class="pre">interp_decay_knots()</span></code></a> (<code class="docutils literal notranslate"><span class="pre">cubic2</span></code>, padding 0.1,
+extrapolation 0).</p>
+<ul class="simple">
+<li><p>Parameters: <code class="docutils literal notranslate"><span class="pre">pod_local</span></code> (N), <code class="docutils literal notranslate"><span class="pre">beta_coeff</span></code>, <code class="docutils literal notranslate"><span class="pre">gamma_shift_coeff</span></code>,
+<code class="docutils literal notranslate"><span class="pre">gamma_stretch_coeff</span></code>.</p></li>
+<li><p>Bounds: <code class="docutils literal notranslate"><span class="pre">pod_local</span></code> <span class="math notranslate nohighlight">\(\ge 10^{-6}\)</span>.</p></li>
+<li><p>Constraints: <span class="math notranslate nohighlight">\(0.5 \le \beta(z_j) \le 100\)</span>.</p></li>
+</ul>
+<p>Not used in the final runs.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="util.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">W_POD.util</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="interp.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">W_POD.interp</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-interface">Mode (interface)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#W_POD.modes.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#globalmode">GlobalMode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transportedmode">TransportedMode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stretchedmode">StretchedMode</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Koprinkov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Robert Koprinkov.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
